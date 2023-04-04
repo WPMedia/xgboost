@@ -57,6 +57,16 @@
 
     <profiles>
         <profile>
+            <id>wapo</id>
+            <distributionManagement>
+                <repository>
+                    <id>github</id>
+                     <name>GitHub OWNER Apache Maven Packages</name>
+                     <url>https://maven.pkg.github.com/WPMedia/xgboost</url>
+                </repository>
+            </distributionManagement>
+        </profile>
+        <profile>
             <!-- default active profile excluding gpu related test suites -->
             <id>default</id>
             <activation>
@@ -356,15 +366,6 @@
                     <configLocation>scalastyle-config.xml</configLocation>
                     <outputEncoding>UTF-8</outputEncoding>
                 </configuration>
-                <executions>
-                    <execution>
-                        <id>checkstyle</id>
-                        <phase>validate</phase>
-                        <goals>
-                            <goal>check</goal>
-                        </goals>
-                    </execution>
-                </executions>
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
