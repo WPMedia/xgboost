@@ -6,7 +6,7 @@
 
     <groupId>ml.dmlc</groupId>
     <artifactId>xgboost-jvm_2.12</artifactId>
-    <version>1.6.1</version>
+    <version>1.6.1-WAPO</version>
     <packaging>pom</packaging>
     <name>XGBoost JVM Package</name>
     <description>JVM Package for XGBoost</description>
@@ -65,6 +65,7 @@
                      <url>https://maven.pkg.github.com/WPMedia/xgboost</url>
                 </repository>
             </distributionManagement>
+            <modules><module>xgboost4j</module></modules>
         </profile>
         <profile>
             <!-- default active profile excluding gpu related test suites -->
