@@ -6,7 +6,7 @@
 
     <groupId>ml.dmlc</groupId>
     <artifactId>xgboost-jvm_2.12</artifactId>
-    <version>1.7.4</version>
+    <version>1.7.4-WAPO</version>
     <packaging>pom</packaging>
     <name>XGBoost JVM Package</name>
     <description>JVM Package for XGBoost</description>
@@ -53,9 +53,20 @@
         </repository>
     </repositories>
     <modules>
+        <module>xgboost4j</module>
     </modules>
 
     <profiles>
+        <profile>
+            <id>wapo</id>
+            <distributionManagement>
+                <repository>
+                    <id>github</id>
+                     <name>GitHub OWNER Apache Maven Packages</name>
+                     <url>https://maven.pkg.github.com/WPMedia/xgboost</url>
+                </repository>
+            </distributionManagement>
+        </profile>
         <profile>
             <!-- default active profile excluding gpu related test suites -->
             <id>default</id>
@@ -64,9 +75,6 @@
             </activation>
             <modules>
                 <module>xgboost4j</module>
-                <module>xgboost4j-example</module>
-                <module>xgboost4j-spark</module>
-                <module>xgboost4j-flink</module>
             </modules>
         </profile>
 
@@ -310,12 +318,6 @@
             </build>
         </profile>
     </profiles>
-    <distributionManagement>
-        <snapshotRepository>
-            <id>ossrh</id>
-            <url>https://oss.sonatype.org/content/repositories/snapshots</url>
-        </snapshotRepository>
-    </distributionManagement>
     <build>
         <resources>
             <resource>
@@ -505,4 +507,11 @@
             <scope>test</scope>
         </dependency>
     </dependencies>
+        <distributionManagement>
+       <repository>
+         <id>github</id>
+         <name>GitHub OWNER Apache Maven Packages</name>
+         <url>https://maven.pkg.github.com/WPMedia/xgboost</url>
+       </repository>
+    </distributionManagement>
 </project>
